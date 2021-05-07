@@ -9,3 +9,7 @@ services:
     tty: true
     volumes:
       - .:/dockerProject
+
+  docpush:
+    build: .
+    image: "gladiotuetur/mathewgeorge_docker_project_07may2021:${build_container_version}"  # goes to your repository on Docker Hub

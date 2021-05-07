@@ -17,8 +17,12 @@ pipeline {
     stage ('Compile the code') {
 
         steps {
-            sh """
+	    
+            
+	    sh """
             sudo docker-compose up -d
+	    sed 'build_container_version=${env.BUILD_NUMBER}' .env
+            sudo docker-compose push docpush	
             """
         }
 
