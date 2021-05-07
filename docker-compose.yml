@@ -4,7 +4,7 @@ services:
     build: .
     ports:
       - "5000:5000"
-    image: "localhost:5000/jenkins/mathewgeorge_docker_project_07may2021:${build_container_version}"
+    image: "mathewgeorge_docker_project_07may2021:${build_container_version}"
     stdin_open: true
     tty: true
     volumes:
