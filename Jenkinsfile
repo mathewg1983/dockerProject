@@ -3,6 +3,12 @@ pipeline {
         label 'master'
 
     }
+    environment {
+        DOCUSERN = credentials('jenkins-docker-secret-key-id')
+        DOCPASS = credentials('jenkins-docker-secret-access-key')
+    }
+
+
     tools {
            dockerTool 'myDocker'
     }
