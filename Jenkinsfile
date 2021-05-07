@@ -20,9 +20,10 @@ pipeline {
 	    
             
 	    sh """
+	    rm -f .env
             echo "build_container_version=${env.BUILD_NUMBER}" >> .env
             sudo docker-compose up -d app
-            cat .env
+            docker login --username ${env.DOCUSERN} --p ${env.DOCPASS}
             sudo docker-compose push docpush 	
             """
         }
