@@ -29,7 +29,7 @@ pipeline {
 	    rm -f .env
             echo "build_container_version=${env.BUILD_NUMBER}" >> .env
             sudo docker-compose up -d app
-            docker login --username ${env.DOCUSERN} --password ${env.DOCPASS}
+            echo "${env.DOCPASS}" | sudo docker login --username ${env.DOCUSERN} --password-stdin
             sudo docker-compose push docpush 	
             """
         }
