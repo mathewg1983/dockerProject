@@ -10,7 +10,7 @@ pipeline {
     stage ('Check out the code') {
 
         steps{
-            git branch: 'master', url: 'https://github.com/gladiotuetur/dockerProject.git'
+            git branch: 'master', url: 'https://github.com/mathewg1983/dockerProject.git'
         }
 
     }
