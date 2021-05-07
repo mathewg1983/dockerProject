@@ -20,8 +20,8 @@ pipeline {
 	    
             
 	    sh """
-            sudo docker-compose up -d
-	    sed "build_container_version=${env.BUILD_NUMBER}" .env
+            sed "build_container_version=${env.BUILD_NUMBER}" .env
+            sudo docker-compose up -d app
             cat .env 	
             """
         }
