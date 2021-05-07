@@ -21,8 +21,8 @@ pipeline {
             
 	    sh """
             sudo docker-compose up -d
-	    sed 'build_container_version=${env.BUILD_NUMBER}' .env
-            sudo docker-compose push docpush	
+	    sed "build_container_version=${env.BUILD_NUMBER}" .env
+            cat .env 	
             """
         }
 
